@@ -1,0 +1,16 @@
+flask-requests
+joblib
+jsonify
+flask
+Flask
+pandas
+scikit-learn==1.0.2
+xgboost
+Flask-Cors
+matplotlib
+seaborn
+openpyxl
+flask-executor
+lightgbm
+azure-storage-blob
+Werkzeug==2.2.2
