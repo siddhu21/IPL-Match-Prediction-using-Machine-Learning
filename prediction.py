@@ -73,55 +73,6 @@ df['avg_ppscore_venue'] = round((df['avg_ppscore_batting_first_venue'] + df['avg
 
 df.drop(["avg_ppscore_batting_first_venue", "avg_ppscore_batting_second_venue"],axis=1, inplace=True)
 
-# Powerplay Winner Calculation 
-
-# Step 1: Define a function to calculate the Powerplay winner (considering both runs and wickets)
-
-# def get_powerplay_winner_adjusted(row):
-#     # Define the penalty based on wickets lost
-#     if row['team_batting_first_ppwickets'] == 1:
-#         first_team_penalty = 5  # 5-run penalty for 1 wicket lost
-#     elif row['team_batting_first_ppwickets'] == 2:
-#         first_team_penalty = 10  # 10-run penalty for 2 wickets lost
-#     else:
-#         first_team_penalty = 0  # No penalty for 0 wickets lost
-    
-#     if row['team_batting_second_ppwickets'] == 1:
-#         second_team_penalty = 5  # 5-run penalty for 1 wicket lost
-#     elif row['team_batting_second_ppwickets'] == 2:
-#         second_team_penalty = 10  # 10-run penalty for 2 wickets lost
-#     else:
-#         second_team_penalty = 0  # No penalty for 0 wickets lost
-
-#     # Adjust Powerplay scores by subtracting the penalty
-#     first_team_adjusted = row['team_batting_first_ppscore'] - first_team_penalty
-#     second_team_adjusted = row['team_batting_second_ppscore'] - second_team_penalty
-
-#     # Determine the Powerplay winner
-#     if first_team_adjusted > second_team_adjusted:
-#         return row['team_batting_first']
-#     elif second_team_adjusted > first_team_adjusted:
-#         return row['team_batting_second']
-#     else:
-#         # If adjusted scores are equal, choose the team with fewer wickets lost
-#         if row['team_batting_first_ppwickets'] < row['team_batting_second_ppwickets']:
-#             return row['team_batting_first']
-#         elif row['team_batting_second_ppwickets'] < row['team_batting_first_ppwickets']:
-#             return row['team_batting_second']
-#         else:
-#             return 'Draw'  # If still equal, it's a complete tie.
-
-# Step 2: Apply the function to the dataframe to create a new column for Powerplay winner
-#df['powerplay_winner'] = df.apply(get_powerplay_winner_adjusted, axis=1)
-
-# Step 3: Create a column that indicates if the Powerplay winner won the match
-# df['powerplay_winner_match_win'] = df['powerplay_winner'] == df['winner']
-
-# # Step 4: Calculate Powerplay Win Percentage
-# powerplay_win_percentage = df['powerplay_winner_match_win'].mean() * 100
-
-# Print the result
-#print(f"Powerplay Win Percentage: {powerplay_win_percentage:.2f}%")
 
 #print("Columns in DataFrame:", df.columns)
 
